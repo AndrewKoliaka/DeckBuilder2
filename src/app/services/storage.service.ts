@@ -10,7 +10,17 @@ export class StorageService {
   constructor() { }
 
   getDecks(): Array<Deck> {
-    return JSON.parse(localStorage.getItem(MTG_DECKS_KEY));
+    let savedDecks;
+
+    try {
+      savedDecks = JSON.parse(localStorage.getItem(MTG_DECKS_KEY));
+
+      return Array.isArray(savedDecks) ? savedDecks : [];
+    } catch (e) {
+      console.error(e);
+
+      return [];
+    }
   }
 
   getDeck(name: string): Deck {
