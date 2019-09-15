@@ -1,0 +1,18 @@
+<mat-toolbar class="header">
+  <div class="header__actions">
+    <button class="header__action-button" mat-raised-button>New deck</button>
+    <button class="header__action-button" mat-raised-button>Load deck</button>
+    <button class="header__action-button" mat-raised-button>Open file</button>
+    <button class="header__action-button" mat-raised-button>Download file</button>
+    <button class="header__action-button header__action-button_purple" mat-raised-button>Mark as a commander</button>
+    <button class="header__action-button header__action-button_purple" mat-raised-button>Delete all selected</button>
+  </div>
+
+  <div class="header__print">
+    <div class="header__info">
+      <div>Cards: {{ deckSize }}</div>
+      <div>Pages: {{ pagesCount }}</div>
+    </div>
+      <button mat-raised-button [disabled]="!deckSize">Print</button>
+  </div>
+</mat-toolbar>

@@ -1,2 +1,9 @@
 <app-header></app-header>
+
+<section *ngIf="!deck" class="no-deck">
+  <p>Drag&Drop card images here from <a href="https://scryfall.com/" target="_blank">https://scryfall.com/</a> or any other resources</p>
+</section>
+
+<app-cards-list *ngIf="deck"></app-cards-list>
+
 <router-outlet></router-outlet>

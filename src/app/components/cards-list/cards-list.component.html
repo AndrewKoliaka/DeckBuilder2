@@ -1,0 +1,6 @@
+<main class="cards-list">
+  <app-card-item
+    *ngFor="let card of deck.cards"
+    [card]="card"
+    [isDarkened]="!card.isSelected && isSelection"></app-card-item>
+</main>

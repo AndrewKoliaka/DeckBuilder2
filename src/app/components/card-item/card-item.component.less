@@ -1,0 +1,47 @@
+@card-height: 8.5cm;
+
+.card {
+  position: relative;
+  display: inline-block;
+  height: @card-height;
+  margin: 6px;
+  border: 6px solid #000;
+  border-radius: .5cm;
+  transition: all .3s;
+  cursor: pointer;
+
+  &--selected {
+    opacity: 1;
+    transform: translate(-8px, -8px);
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, .5);
+  }
+
+  &--darkened {
+    opacity: .5;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__count {
+    position: absolute;
+    width: 45px;
+    height: 30px;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    border: 2px solid #4A4A4A;
+    background: #fff;
+    opacity: .5;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
