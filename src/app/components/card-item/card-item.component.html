@@ -3,7 +3,7 @@
           'card--selected': card.isSelected,
           'card--darkened': isDarkened
         }">
-  <img class="card__image" src="{{ card.url }}" (click)="toggleSelect()">
+  <img class="card__image" src="{{ card.url }}" (click)="toggleSelect()" [draggable]="false">
 
-  <input class="card__count" type="number" min="1" [(ngModel)]="card.count">
+  <input class="card__count" type="number" min="1" [(ngModel)]="card.count" (change)="onCountChange()">
 </figure>

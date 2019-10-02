@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
+import { DeckService } from '../../services/deck.service';
 import { Card } from '../../models/card.model';
 
 @Component({
@@ -11,7 +12,7 @@ export class CardItemComponent implements OnInit {
   @Input() card: Card;
   @Input() isDarkened: boolean;
 
-  constructor() { }
+  constructor(private deckService: DeckService) { }
 
   ngOnInit() {
   }
@@ -23,5 +24,9 @@ export class CardItemComponent implements OnInit {
     }
 
     this.card.isSelected = false;
+  }
+
+  onCountChange(): void {
+    this.deckService.saveDeck();
   }
 }
